@@ -10,7 +10,7 @@ const blogSlice = createSlice({
     deletestatus: null,
   },
   reducers: {
-    setBlog(state, action) {
+    setdata(state, action) {
       state.data = action.payload;
     },
 
