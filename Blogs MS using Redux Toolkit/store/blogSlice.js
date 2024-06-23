@@ -56,7 +56,7 @@ export function fetchBlog() {
       if (response.status === 200 && response.data.blog.length > 0) {
         // console.log("Setting token:", response.data.token);
 
-        dispatch(setBlog(response.data.blog));
+        dispatch(setdata(response.data.blog));
         dispatch(setStatus(statuses.SUCCESS));
       } else {
         dispatch(setStatus(statuses.ERROR));
@@ -130,7 +130,7 @@ export function fetchSingleBlog(id) {
 
       if (response.status === 200) {
         // console.log("Setting token:", response.data.token);
-        dispatch(setBlog(response.data.data));
+        dispatch(setdata(response.data.data));
         dispatch(setStatus(statuses.SUCCESS));
       } else {
         dispatch(setStatus(statuses.ERROR));
