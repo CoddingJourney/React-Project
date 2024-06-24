@@ -12,6 +12,7 @@ const blogSlice = createSlice({
   reducers: {
     setBlog(state, action) {
       state.data = action.payload;
+      // console.log(data);
     },
 
     setStatus(state, action) {
@@ -102,12 +103,12 @@ export const deleteBlog = (id) => {
   };
 };
 export function editBlog(id, data) {
-  console.log("hello");
+  // console.log("hello");
   return async function editBlogThunk(dispatch) {
     dispatch(setStatus(statuses.LOADING));
     try {
       const response = await API.patch(`blog/${id}`, data);
-      c;
+
       if (response.status === 200) {
         // console.log("Setting token:", response.data.token);
 

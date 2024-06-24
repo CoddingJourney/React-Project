@@ -10,8 +10,8 @@ import {
 
 const SingleBlog = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate;
-  const { id } = useParams;
+  const navigate = useNavigate();
+  const { id } = useParams();
   const { deletestatus, data } = useSelector((state) => state.blog);
   // console.log(data);
   useEffect(() => {
@@ -57,38 +57,38 @@ const SingleBlog = () => {
             </div>
             <div className="md:flex-1 px-4">
               <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
-                Title:
+                Title: {data?.title}
               </h2>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                {data?.title}
+                {/* {data?.title} */}
               </p>
-              <div className="flex mb-4">
-                <div className="mr-4">
-                  <span className="font-bold text-gray-700 dark:text-gray-300">
-                    Category:
-                  </span>
-                  <span className="text-gray-600 dark:text-gray-300">
-                    {data?.category}
-                  </span>
-                </div>
-                <div>
-                  <span className="font-bold text-gray-700 dark:text-gray-300">
-                    Published At:
-                  </span>
-                  <span className="text-gray-600 dark:text-gray-300">
-                    In Stock
-                  </span>
-                </div>
-              </div>
-
-              <div>
-                <span className="font-bold text-gray-700 dark:text-gray-300">
-                  Product Description:
+            </div>
+            <div className="md:flex-1 px-4">
+              <h2 className="text-2xl font-bold text-black-800 dark:text-Black mb-2">
+                Title: {data?.subtitle}
+              </h2>
+              <p className="text-black-600 dark:text-black-300 text-sm mb-4">
+                {/* {data?.title} */}
+              </p>
+            </div>
+            <div className="flex mb-4">
+              <div className="mr-4">
+                <span className="font-bold text-black-700 dark:text-Black-300">
+                  Category:
                 </span>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
-                  {data?.description}
-                </p>
+                <span className="text-lack-600 dark:text-Black-300">
+                  {data?.category}
+                </span>
               </div>
+            </div>
+
+            <div>
+              <span className="font-bold text-gray-700 dark:text-Black-300">
+                Product Description:
+              </span>
+              <p className="text-gray-600 dark:text-Black-300 text-sm mt-2">
+                {data?.description}
+              </p>
             </div>
           </div>
         </div>

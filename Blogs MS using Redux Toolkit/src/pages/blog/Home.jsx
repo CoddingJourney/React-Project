@@ -9,7 +9,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const { data } = useSelector((state) => state.blog);
-  console.log(data);
+  // console.log(data);
   useEffect(() => {
     dispatch(fetchBlog());
     setIsLoading(false);

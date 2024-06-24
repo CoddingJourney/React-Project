@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const Card = ({ data }) => {
   return (
     <Link to={`/blog/${data._id}`}>
-      console.log(id);
+      {/* console.log(id); */}
       <div className="max-w-sm rounded overflow-hidden shadow-lg mb-4">
         <img
           className="w-full"
-          src={data.imgUrl}
+          src={data.imageUrl}
           alt="Sunset in the mountains"
         />
         <div className="px-6 py-4">
