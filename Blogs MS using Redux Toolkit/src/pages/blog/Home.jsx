@@ -9,6 +9,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const { data } = useSelector((state) => state.blog);
+  console.log(data);
   useEffect(() => {
     dispatch(fetchBlog());
     setIsLoading(false);
@@ -21,7 +22,7 @@ const Home = () => {
       <div className="flex flex-wrap justify-center space-x-5 mt-6">
         {data &&
           data.map((data) => {
-            <Card key={data.id} data={data} />;
+            return <Card key={data.id} data={data} />;
           })}
       </div>
     </Layout>

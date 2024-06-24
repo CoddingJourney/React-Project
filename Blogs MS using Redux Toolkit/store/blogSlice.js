@@ -53,10 +53,10 @@ export function fetchBlog() {
     dispatch(setStatus(statuses.LOADING));
     try {
       const response = await API.get("blog");
-      if (response.status === 200 && response.data.blog.length > 0) {
+      if (response.status === 200 && response.data.data.length > 0) {
         // console.log("Setting token:", response.data.token);
 
-        dispatch(setBlog(response.data.blog));
+        dispatch(setBlog(response.data.data));
         dispatch(setStatus(statuses.SUCCESS));
       } else {
         dispatch(setStatus(statuses.ERROR));

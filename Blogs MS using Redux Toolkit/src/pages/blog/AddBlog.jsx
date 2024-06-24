@@ -10,7 +10,7 @@ const AddBlog = () => {
   const { status } = useSelector((state) => state.blog);
   // console.log(status);
   const dispatch = useDispatch();
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const handleAddBlog = (data) => {
     dispatch(addBlog(data));
     navigate("/");
