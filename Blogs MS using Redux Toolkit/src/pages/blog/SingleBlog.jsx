@@ -64,7 +64,7 @@ const SingleBlog = () => {
               </p>
             </div>
             <div className="md:flex-1 px-4">
-              <h2 className="text-2xl font-bold text-black-800 dark:text-Black mb-2">
+              <h2 className="text-2xl font-bold text--800 dark:text-Black mb-2">
                 Title: {data?.subtitle}
               </h2>
               <p className="text-black-600 dark:text-black-300 text-sm mb-4">

@@ -13,7 +13,7 @@ const Form = ({ type, onSubmit }) => {
     const { name, value } = e.target;
     setData({
       ...data,
-      [name]: name === "image" ? e.target.file[0] : value,
+      [name]: name === "image" ? e.target.files[0] : value,
     });
   };
   const handleSubmit = (e) => {

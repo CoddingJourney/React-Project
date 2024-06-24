@@ -7,7 +7,7 @@ const blogSlice = createSlice({
     data: null,
     status: null,
     editstatus: null,
-    deletestatus: null,
+    deleteStatus: null,
   },
   reducers: {
     setBlog(state, action) {
@@ -20,7 +20,7 @@ const blogSlice = createSlice({
     },
   },
   setDeleteStatus(state, action) {
-    state.deletestatus = action.payload;
+    state.deleteStatus = action.payload;
   },
   setEditStatus(state, action) {
     state.editstatus = action.payload;
@@ -94,11 +94,16 @@ export const deleteBlog = (id) => {
       const response = await API.delete(`blog/${id}`);
       if (response.status === 200) {
         dispatch(setDeleteStatus(true));
+        // dispatch(setStatus(statuses.SUCCESS));
       } else {
         dispatch(setDeleteStatus(null));
+        // dispatch(setStatus(statuses.ERROR));
       }
     } catch (error) {
+      // console.log(error);
       dispatch(setDeleteStatus(false));
+
+      // dispatch(setStatus(statuses.ERROR));
     }
   };
 };
@@ -123,7 +128,7 @@ export function editBlog(id, data) {
   };
 }
 export function fetchSingleBlog(id) {
-  console.log(id);
+  // console.log(id);
   return async function fetchSingleBlogThunk(dispatch) {
     dispatch(setStatus(statuses.LOADING));
     try {
