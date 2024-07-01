@@ -35,17 +35,18 @@ const EditBlog = () => {
       });
     }
   }, [data]);
+  // console.log(data1);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData1({
-      ...data,
+      ...data1,
       [name]: name === "image" ? e.target.files[0] : value,
     });
   };
   const handleSubmit = (e) => {
-    e.preventdefault();
-    dispatch(editBlog(data, id));
+    e.preventDefault();
+    dispatch(editBlog(data1, id));
   };
   useEffect(() => {
     if (editstatus === true) {
@@ -67,7 +68,7 @@ const EditBlog = () => {
               Title
             </label>
             <input
-              value={data.title}
+              value={data1.title}
               type="text"
               id="title"
               name="title"
@@ -84,7 +85,7 @@ const EditBlog = () => {
               Subtitle
             </label>
             <input
-              value={data.subtitle}
+              value={data1.subtitle}
               type="text"
               id="subtitle"
               name="subtitle"
@@ -102,7 +103,7 @@ const EditBlog = () => {
             </label>
             <input
               type="text"
-              value={data.category}
+              value={data1.category}
               id="category"
               name="category"
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
@@ -119,7 +120,7 @@ const EditBlog = () => {
             </label>
             <textarea
               id="description"
-              value={data.description}
+              value={data1.description}
               name="description"
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
               rows="6"
@@ -141,6 +142,7 @@ const EditBlog = () => {
               accept="image/*"
               onChange={handleChange}
               className="w-full"
+              // value={data1.image}
             />
           </div>
           <div className="flex justify-end">

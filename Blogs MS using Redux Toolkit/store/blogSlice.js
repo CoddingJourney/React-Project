@@ -19,10 +19,10 @@ const blogSlice = createSlice({
       state.status = action.payload;
     },
   },
-  setDeleteStatus(state, action) {
+  setDeleteStatus: (state, action) => {
     state.deleteStatus = action.payload;
   },
-  setEditStatus(state, action) {
+  setEditStatus: (state, action) => {
     state.editstatus = action.payload;
   },
 });
@@ -68,25 +68,7 @@ export function fetchBlog() {
     }
   };
 }
-// export function deleteBlog(id) {
-//   // console.log(id);
-//   return async function deleteBlogThunk(dispatch) {
-//     dispatch(setStatus(statuses.LOADING));
-//     try {
-//       const response = await API.delete("blog/${id}");
-//       if (response.status === 200) {
-//         // console.log("Setting token:", response.data.token);
 
-//         dispatch(setDeleteStatus(true));
-//       } else {
-//         dispatch(setDeleteStatus(null));
-//       }
-//     } catch (error) {
-//       // console.log(error);
-//       dispatch(setDeleteStatus(false));
-//     }
-//   };
-// }
 export const deleteBlog = (id) => {
   return async function deleteBlogThunk(dispatch) {
     dispatch(setStatus(statuses.LOADING));
