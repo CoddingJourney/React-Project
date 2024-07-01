@@ -20,7 +20,7 @@ const EditBlog = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { data, editstatus } = useSelector((state) => state.blog);
+  const { data, editStatus } = useSelector((state) => state.blog);
   useEffect(() => {
     dispatch(fetchSingleBlog(id));
   }, [id]);
@@ -49,11 +49,11 @@ const EditBlog = () => {
     dispatch(editBlog(data1, id));
   };
   useEffect(() => {
-    if (editstatus === true) {
+    if (editStatus === true) {
       dispatch(setEditStatus(null));
       navigate(`/blog/${id}`);
     }
-  }, [editstatus]);
+  }, [editStatus]);
   return (
     <Layout>
       <form onSubmit={handleSubmit}>

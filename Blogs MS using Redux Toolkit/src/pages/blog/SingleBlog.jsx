@@ -12,7 +12,7 @@ const SingleBlog = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
-  const { deletestatus, data } = useSelector((state) => state.blog);
+  const { deleteStatus, data } = useSelector((state) => state.blog);
   // console.log(data);
   useEffect(() => {
     dispatch(fetchSingleBlog(id));
@@ -21,12 +21,13 @@ const SingleBlog = () => {
     dispatch(deleteBlog(id));
   };
   useEffect(() => {
-    if (deletestatus === true) {
+    if (deleteStatus === true) {
       dispatch(setDeleteStatus(null));
-      localStorage.getItem("jwttoken", token);
+      // const token = localStorage.getItem("jwttoken");
+
       navigate("/");
     }
-  }, [deletestatus]);
+  }, [deleteStatus]);
 
   return (
     <Layout>

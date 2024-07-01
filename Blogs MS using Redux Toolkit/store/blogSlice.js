@@ -6,7 +6,7 @@ const blogSlice = createSlice({
   initialState: {
     data: null,
     status: null,
-    editstatus: null,
+    editStatus: null,
     deleteStatus: null,
   },
   reducers: {
@@ -18,13 +18,14 @@ const blogSlice = createSlice({
     setStatus(state, action) {
       state.status = action.payload;
     },
-  },
-  setDeleteStatus: (state, action) => {
-    state.deleteStatus = action.payload;
-  },
-  setEditStatus: (state, action) => {
-    state.editstatus = action.payload;
-  },
+
+    setDeleteStatus(state, action) {
+      state.deleteStatus = action.payload;
+    },
+    setEditStatus(state, action) {
+      state.editStatus = action.payload;
+    },
+  }
 });
 export const { setStatus, setBlog, setEditStatus, setDeleteStatus } =
   blogSlice.actions;
